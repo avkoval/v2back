@@ -33,16 +33,16 @@ on this page.
 
 ** Render page without 'header'
 
-/some/page/url/_headless/
+/some/page/url/?layout=topless
 
 This specific view should omit the header from the page.
 
 ** Render only content
 
-/some/page/url/_content/
+/some/page/url/?layout=body
 
 In this case we only render page content (header, footer, sidebar are skipped if were defined)
 
 ** Render single widget
 
-/some/page/url/_widget/name/
+/some/page/url/?layout=widget&widget=widget_a

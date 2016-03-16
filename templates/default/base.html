@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+{% if not topless %}<!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
     <title>{% block title %}My amazing site{% endblock %}</title>
   </head>
-
-  <body>
+  <body>{% endif %}
+    {% if sidebar %}
     <div id="sidebar">
         {% block sidebar %}
           <ul>
@@ -14,9 +14,10 @@
           </ul>
         {% endblock %}
     </div>
+    {% endif %}
 
     <div id="content">
         {% block content %}{% endblock %}
-    </div>
+    </div>{% if not bottomless %}
   </body>
-</html>
+</html>{% endif %}
