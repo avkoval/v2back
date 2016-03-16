@@ -1,0 +1,48 @@
+#+AUTHOR: Alex V. Koval
+#+TITLE: Backend site rendering example for 3 viewports
+
+* Introduction
+
+The main idea of this presentation is to show template & backend app structure for the Web site.
+
+* Requirements
+
+** Site is to render at least 3 viewport sizes:
+
+  * Desktop
+  * Mobile
+  * Tablet
+
+ The HTML templates structure should allow us to omit some files. In this case the file should be taken
+ from 'default' location. For example we on request mobile/news.html the system should do this:
+
+  1. Look for mobile/news.html in all default template directories
+  2. If its not found, look into default/news.html
+
+Same for desktop/news.html. It should render in sequence:
+
+  1. desktop/news.html (if found)
+  2. default/news.html
+
+** Render full page
+
+/some/page/url/
+
+This is default operation, with one exception to this rule - this should render several widgets if they are defined
+on this page.
+
+** Render page without 'header'
+
+/some/page/url/_headless/
+
+This specific view should omit the header from the page.
+
+** Render only content
+
+/some/page/url/_content/
+
+In this case we only render page content (header, footer, sidebar are skipped if were defined)
+
+** Render single widget
+
+/some/page/url/_widget/name/
